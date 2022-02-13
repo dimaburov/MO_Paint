@@ -1,0 +1,58 @@
+﻿<Window x:Class="Paint.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Paint"
+        mc:Ignorable="d"
+        Title="Paint" Height="450" Width="800">
+    <Grid>
+        <Grid Margin="0,79,0.333,-0.333" Grid.ColumnSpan="2">
+            <Canvas x:Name="MyCanvas" Height="342" VerticalAlignment="Top" Background="#FFF0F5D7" HorizontalAlignment="Left" Width="793" MouseLeftButtonDown="MyCanvas_MouseLeftButtonDown" MouseRightButtonDown="MyCanvas_MouseRightButtonDown"/>
+        </Grid>
+        <CheckBox x:Name="CheckLine" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,5,0,0" Height="27" Width="57">
+            <Image Source="Resources/line.png" Height="27" Width="30"/>
+        </CheckBox>
+
+        <Button Content="Clear" HorizontalAlignment="Left" VerticalAlignment="Top" Width="57" Margin="10,46,0,0" Background="#FFDBE9B0" Click="Button_Click" Height="20"/>
+        <CheckBox x:Name="CheckCircl" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="342,10,0,0" Height="27">
+            <Image Source="Resources/circle.png" Height="28" Width="33" RenderTransformOrigin="0.787,0.556"/>
+        </CheckBox>
+        <CheckBox x:Name="CheckBezier" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="406,9,0,0">
+            <Image Source="Resources/BezierCurve.png" Height="28" Width="33" RenderTransformOrigin="0.787,0.556"/>
+        </CheckBox>
+        <CheckBox x:Name="CheckStandartLine" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,3,0,0">
+            <Image Source="Resources/line.png" Height="29" Width="39" RenderTransformOrigin="0.787,0.556"/>
+        </CheckBox>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Брезенхема" VerticalAlignment="Top" Margin="19,25,0,0" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Диференциальный" VerticalAlignment="Top" Margin="98,30,0,0" FontSize="14" Height="39" Width="69"/>
+        <CheckBox  x:Name="CheckBoxCoeNa" HorizontalAlignment="Left" Margin="475,7,0,0" VerticalAlignment="Top" Checked="CheckBoxCoeNa_Checked">
+            <Image Source="Resources/box.png" Height="30" Width="29" RenderTransformOrigin="0.658,0.296"/>
+        </CheckBox>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Сазерленда-Коэна " VerticalAlignment="Top" Margin="459,31,0,0" FontSize="14"/>
+
+        <CheckBox x:Name="CheckAverage" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="581,7,0,0" Checked="CheckBoxCoeNa_Checked">
+            <Image Source="Resources/box.png" Height="32" Width="32" RenderTransformOrigin="0.658,0.296"/>
+        </CheckBox>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Cредней точки" VerticalAlignment="Top" Margin="587,30,0,0" FontSize="14" RenderTransformOrigin="0.506,0.215"/>
+        <CheckBox x:Name="CheckXoR" Content="XoR" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="741,12,0,0" FontSize="14" Height="38" Width="52"/>
+        <TextBox HorizontalAlignment="Left" Height="8" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="793" Margin="0,71,0,0" Background="#FFC9C1C1"/>
+        <CheckBox x:Name="CheckNonIntegerValues" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="172,6,0,0" Height="39" Width="75">
+            <Image Source="Resources/line.png" Height="29" Width="39" RenderTransformOrigin="0.787,0.556"/>
+        </CheckBox>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Нецелочисленными  координаты" VerticalAlignment="Top" Margin="177,31,0,0" FontSize="14" Height="40" Width="70"/>
+        <CheckBox x:Name="CheckBeka" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="673,8,0,0" Height="39" Width="60" Checked="CheckBoxCoeNa_Checked" FontSize="14">
+            <Image Source="Resources/box.png" Height="32" Width="32" RenderTransformOrigin="0.658,0.296"/>
+        </CheckBox>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Кирса-Бека" VerticalAlignment="Top" Margin="663,42,0,0" FontSize="14"/>
+        <TextBox x:Name="x_start" HorizontalAlignment="Left" Height="15" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="39" Margin="296,6,0,0" RenderTransformOrigin="0.641,0.458"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="x start" VerticalAlignment="Top" Margin="247,5,0,0" Width="44" Height="16"/>
+        <TextBox x:Name="y_start" HorizontalAlignment="Left" Height="15" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="39" Margin="296,24,0,0" RenderTransformOrigin="0.641,0.458"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="y start" VerticalAlignment="Top" Margin="247,23,0,0" Width="44" Height="16"/>
+        <TextBox x:Name="x_end" HorizontalAlignment="Left" Height="15" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="39" Margin="296,40,0,0" RenderTransformOrigin="0.641,0.458"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="x end" VerticalAlignment="Top" Margin="247,39,0,0" Width="44" Height="16"/>
+        <TextBox x:Name="y_end" HorizontalAlignment="Left" Height="15" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="39" Margin="296,57,0,0" RenderTransformOrigin="0.641,0.458"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="y end" VerticalAlignment="Top" Margin="247,56,0,0" Width="44" Height="16"/>
+        <Button Content="Рисовать" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="363,51,0,0" Click="Button_Click_1"/>
+    </Grid>
+</Window>
